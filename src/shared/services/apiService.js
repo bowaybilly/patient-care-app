@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiService = axios.create({
-  baseURL: "https://your-backend-url/api", // Base URL for your API
+  baseURL: "https://localhost:44319/api", // Base URL for your API
   timeout: 10000, // Request timeout (optional)
 });
 

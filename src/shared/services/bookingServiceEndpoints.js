@@ -4,7 +4,7 @@ import apiService from "./apiService";
 // Fetch all bookings
 export const getBookings = async () => {
   try {
-    const response = await apiService.get("/bookings");
+    const response = await apiService.get("/booking");
     return response.data;
   } catch (error) {
     // Handle or rethrow the error as needed

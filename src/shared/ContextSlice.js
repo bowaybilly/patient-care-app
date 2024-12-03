@@ -36,7 +36,12 @@ export const contextSlice = createSlice({
     },
     logout(state) {
       state.isAuthenticated = false;
-      state.user = {};
+      state.user = {
+        userName: "",
+        email: "",
+        telephone: "",
+        isAdmin: "",
+      };
     },
   },
 });

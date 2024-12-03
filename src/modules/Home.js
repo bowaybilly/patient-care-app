@@ -1,4 +1,3 @@
-// src/modules/Home.js
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -37,7 +36,7 @@ export function Home() {
   // Handle search functionality
   useEffect(() => {
     const results = bookings.filter((booking) =>
-      booking.customerName.toLowerCase().includes(searchTerm.toLowerCase())
+      booking.patientName.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredBookings(results);
   }, [searchTerm, bookings]);
@@ -50,7 +49,7 @@ export function Home() {
 
       {/* Search Field */}
       <TextField
-        label="Search by Customer Name"
+        label="Search by Patient Name"
         variant="outlined"
         fullWidth
         margin="normal"
@@ -64,9 +63,10 @@ export function Home() {
           <TableHead>
             <TableRow>
               <TableCell>ID</TableCell>
-              <TableCell>Customer Name</TableCell>
-              <TableCell>Date</TableCell>
-              <TableCell>Amount</TableCell>
+              <TableCell>Patient Name</TableCell>
+              <TableCell>Booking Date</TableCell>
+              <TableCell>Doctor Name</TableCell>
+              <TableCell>Department</TableCell>
               <TableCell>Status</TableCell>
             </TableRow>
           </TableHead>
@@ -74,9 +74,12 @@ export function Home() {
             {filteredBookings.map((booking) => (
               <TableRow key={booking.id}>
                 <TableCell>{booking.id}</TableCell>
-                <TableCell>{booking.customerName}</TableCell>
-                <TableCell>{booking.date}</TableCell>
-                <TableCell>{booking.amount}</TableCell>
+                <TableCell>{booking.patientName}</TableCell>
+                <TableCell>
+                  {new Date(booking.bookingDate).toLocaleString()}
+                </TableCell>
+                <TableCell>{booking.doctorName}</TableCell>
+                <TableCell>{booking.department}</TableCell>
                 <TableCell>{booking.status}</TableCell>
               </TableRow>
             ))}

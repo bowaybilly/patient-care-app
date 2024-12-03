@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/api/PatientCareApi.Api/.vs/PatientCareApi.Api
+/api/PatientCareApi.Api/obj
+/api/PatientCareApi.Api/Properties
+/api/PatientCareApi.Api/bin/Debug/net7.0
