@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome", // Use Chrome for debugging React
+      "request": "launch",
+      "name": "Launch React App",
+      "url": "http://localhost:3000", // Default URL for Create React App
+      "webRoot": "${workspaceFolder}/src", // Ensure the webRoot points to your source folder
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node", // For debugging server-side code (if applicable)
+      "request": "launch",
+      "name": "Launch Node.js server",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/server.js" // If you have a Node.js backend
+    }
+  ]
+}
